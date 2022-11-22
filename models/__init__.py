@@ -36,6 +36,14 @@ class Model(object):
         return m
 
     @classmethod
+    def new(cls, form: dict, **kwargs):
+        m = cls(form)
+        for k, v in kwargs.items():
+            setattr(m, k, v)
+        m.save()
+        return m
+
+    @classmethod
     def all(cls):
         path = cls.db_path()
         # log(f'path:({path})')
