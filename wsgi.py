@@ -18,6 +18,12 @@ application = app.app
 
 # 这是把代码部署到 apache gunicorn nginx 后面的套路
 """
+建立一个软连接
+ln -s /var/www/bbs/bbs.conf /etc/supervisor/conf.d/bbs.conf
+
+ln -s /var/www/bbs/bbs.nginx /etc/nginx/sites-enabled/bbs
+
+
 ➜  ~ cat /etc/supervisor/conf.d/xx.conf
 
 [program:todo]
